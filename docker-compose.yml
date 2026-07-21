@@ -1,0 +1,10 @@
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    networks:
+      - nginx_proxy
+
+networks:
+  nginx_proxy:
+    external: true
