@@ -1,32 +1,22 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-primary-50: #eef2ff;
-	--color-primary-100: #e0e7ff;
-	--color-primary-200: #c7d2fe;
-	--color-primary-300: #a5b4fc;
-	--color-primary-400: #818cf8;
-	--color-primary-500: #6366f1;
-	--color-primary-600: #4f46e5;
-	--color-primary-700: #4338ca;
-	--color-primary-800: #3730a3;
-	--color-primary-900: #312e81;
-	--color-primary-950: #1e1b4b;
+	/* --- Paper palette --- */
+	--color-paper: #f7f3ec;
+	--color-paper-shade: #efeae0;
+	--color-ink: #232020;
+	--color-ink-dim: #6b6862;
+	--color-ink-faint: #9a958c;
+	--color-rule: #e0dbd0;
+	--color-accent: #6b6f3a;
+	--color-accent-dark: #525628;
 
-	--color-surface-50: #f8fafc;
-	--color-surface-100: #f1f5f9;
-	--color-surface-200: #e2e8f0;
-	--color-surface-300: #cbd5e1;
-	--color-surface-400: #94a3b8;
-	--color-surface-500: #64748b;
-	--color-surface-600: #475569;
-	--color-surface-700: #334155;
-	--color-surface-800: #1e293b;
-	--color-surface-900: #0f172a;
-	--color-surface-950: #020617;
-
+	/* --- Type --- */
 	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+	--font-serif: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+
+	/* --- Easing --- */
+	--ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -34,11 +24,68 @@ html {
 }
 
 body {
-	background-color: var(--color-surface-950);
-	color: var(--color-surface-100);
+	background-color: var(--color-paper);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 ::selection {
-	background-color: var(--color-primary-500);
-	color: white;
+	background-color: var(--color-accent);
+	color: var(--color-paper);
+}
+
+/* --- Serif helpers --- */
+.font-serif {
+	font-family: var(--font-serif);
+}
+.font-serif-italic {
+	font-family: var(--font-serif);
+	font-style: italic;
+}
+
+/* --- Reveal-on-scroll (pairs with use:reveal action) --- */
+.reveal {
+	opacity: 0;
+	transform: translateY(12px);
+	transition:
+		opacity 0.5s var(--ease-soft),
+		transform 0.5s var(--ease-soft);
+	transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal[data-revealed='true'] {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* --- Animated underline for links --- */
+.link-underline {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-size: 0% 1px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.3s var(--ease-soft);
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+	background-size: 100% 1px;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+	.reveal {
+		opacity: 1;
+		transform: none;
+	}
 }

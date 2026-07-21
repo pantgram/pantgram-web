@@ -33,8 +33,8 @@ export const about: AboutData = {
     { label: "AI Automation", description: "UiPath, LLMs, Workflows" },
     { label: "Full Stack", description: "Angular, React, Node.js" },
   ],
-  heroTagline: "",
-  heroTaglineHighlight: "Engineer",
+  heroTagline: "Pantelis Grammatikopoulos",
+  heroTaglineHighlight: "Software Engineer — Thessaloniki, GR",
   heroDescription:
     "Backend systems, APIs and microservices across education and enterprise domains — plus AI-powered automation pipelines that turn manual work into reliable, scalable workflows.",
   heroStats: [
