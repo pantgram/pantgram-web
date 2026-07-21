@@ -12,9 +12,8 @@ export interface SocialLink {
 
 export interface ContactInfo {
 	email: string;
+	phone: string;
 	location: string;
-	availability: string;
-	availabilityStatus: 'open' | 'limited' | 'closed';
 }
 
 export interface SiteData {
@@ -34,15 +33,15 @@ export const site: SiteData = {
 	navLinks: [
 		{ href: '#about', label: 'About' },
 		{ href: '#services', label: 'Services' },
+		{ href: '#experience', label: 'Experience' },
 		{ href: '#projects', label: 'Projects' },
 		{ href: '#skills', label: 'Skills' },
 		{ href: '#contact', label: 'Contact' }
 	],
 	contact: {
 		email: 'panteleimon.grammatikopoulos@gmail.com',
-		location: 'Thessaloniki, Greece',
-		availability: 'Open for new opportunities',
-		availabilityStatus: 'open'
+		phone: '+30 694 434 3931',
+		location: 'Thessaloniki, Greece'
 	},
 	socials: [
 		{

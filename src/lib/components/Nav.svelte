@@ -19,12 +19,6 @@
 					{link.label}
 				</a>
 			{/each}
-			<a
-				href="#contact"
-				class="rounded-lg bg-primary-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-500"
-			>
-				Hire Me
-			</a>
 		</div>
 
 		<button
@@ -55,13 +49,6 @@
 					{link.label}
 				</a>
 			{/each}
-			<a
-				href="#contact"
-				class="mt-2 block rounded-lg bg-primary-600 px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-500"
-				onclick={() => (mobileOpen = false)}
-			>
-				Hire Me
-			</a>
 		</div>
 	{/if}
 </nav>

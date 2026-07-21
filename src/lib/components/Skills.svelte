@@ -21,16 +21,9 @@
 					<div class="space-y-4">
 						{#each category.skills as skill}
 							<div>
-								<div class="mb-1.5 flex items-center justify-between">
-									<span class="text-sm font-medium text-surface-200">{skill.name}</span>
-									<span class="text-xs text-surface-500">{skill.level}%</span>
-								</div>
-								<div class="h-1.5 overflow-hidden rounded-full bg-surface-800">
-									<div
-										class="h-full rounded-full bg-gradient-to-r from-primary-600 to-primary-400 transition-all duration-500"
-										style="width: {skill.level}%"
-									></div>
-								</div>
+							<div class="mb-1.5">
+								<span class="text-sm font-medium text-surface-200">{skill.name}</span>
+							</div>
 							</div>
 						{/each}
 					</div>

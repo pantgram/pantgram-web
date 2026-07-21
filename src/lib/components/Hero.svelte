@@ -22,10 +22,6 @@
 		class:opacity-100={visible}
 		class:translate-y-0={visible}
 	>
-		<div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-4 py-1.5">
-			<span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
-			<span class="text-sm font-medium text-primary-300">Available for work</span>
-		</div>
 
 		<h1 class="mb-6 text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl">
 			{about.heroTagline}
@@ -54,17 +50,7 @@
 			</a>
 		</div>
 
-		<div class="mt-16 flex items-center justify-center gap-8 text-surface-500">
-			{#each about.heroStats as stat, i}
-				{#if i > 0}
-					<div class="h-8 w-px bg-surface-700"></div>
-				{/if}
-				<div class="text-center">
-					<div class="text-2xl font-bold text-white">{stat.value}</div>
-					<div class="text-xs uppercase tracking-wider">{stat.label}</div>
-				</div>
-			{/each}
-		</div>
+	
 	</div>
 
 	<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-surface-500">

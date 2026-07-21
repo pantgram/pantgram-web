@@ -33,9 +33,7 @@
 		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each services as service}
 				<div class="group rounded-2xl border border-surface-800 bg-surface-900/50 p-6 transition-all duration-300 hover:border-primary-600/50 hover:bg-surface-900/80 hover:shadow-lg hover:shadow-primary-600/5">
-					<div class="mb-4 inline-flex rounded-xl bg-primary-600/10 p-3 text-primary-400">
-						{@render iconSvg(service.icon)}
-					</div>
+				
 
 					<h3 class="mb-2 text-lg font-bold text-white">{service.title}</h3>
 					<p class="mb-4 text-sm leading-relaxed text-surface-400">{service.description}</p>
